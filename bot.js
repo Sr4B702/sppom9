@@ -125,7 +125,18 @@ if (!rank) return message.reply(' ')
     message.delete();
   }
 });
-
+client.on('message', msg =>{
+        let args = msg.content.slice(4);
+  if (msg.content.startsWith('-say')) {
+   msg.channel.send(args)   
+  }
+})
+client2.on('message', msg =>{
+        let args = msg.content.slice(4);
+  if (msg.content.startsWith('-say')) {
+   msg.channel.send(args)   
+  }
+})
 
 client.login(process.env.TOKEN);
 client2.login(process.env.TOKEN2);
